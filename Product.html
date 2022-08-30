@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Product</title>
+    </head>
+    <body>
+    <script>
+        const productList =[
+            {id:1,name:"คอนโดแมว - BONGO",price:"1,299",img:"https://img.my-best.in.th/press_component/item_part_images/b1ac0621eb1e0e9cb11e401aafd5aa62.png?ixlib=rails-4.2.0&q=70&lossless=0&w=640&h=640&fit=clip"},
+            {id:2,name:"Catit แคทอิท น้ำพุดอกไม้ LED สำหรับแมวดื่มน้ำ 3 L",price:"890",img:"https://res-4.cloudinary.com/central-pet-n-me/image/upload/c_lpad,dpr_2.0,f_auto,h_600,q_auto,w_600/v1/media/catalog/product/2/2/2203030030401-1.jpg?_i=AB"},
+            {id:3,name:"Wulee วูลี กระเป๋าเป้แบบพับพกพาได้ สำหรับแมว",price:"1,339",img:"https://res-5.cloudinary.com/central-pet-n-me/image/upload/c_lpad,dpr_2.0,f_auto,h_600,q_auto,w_600/v1/media/catalog/product/a/2/a220800095145-1.jpg?_i=AB"},
+            {id:4,name:"Purina ONE Healthy Kitten Formula productnation",price:"435",img:"https://petbangla.com/wp-content/uploads/2020/02/purina_one_healthy_kitten_formula.jpg"},
+            {id:5,name:"Royal Canin โรยัล คานิน HAIRBALL CARE อาหารแมวโต ชนิดเม็ด ขนาด 400g",price:"219",img:"https://th.bing.com/th/id/R.09a80d1d7cc24f9d01a33160a7c3b572?rik=1jINcXyRsgIaCw&pid=ImgRaw&r=0"},
+            {id:6,name:"SmartHeart - SmartHeart Gold Lamb & Brown Rice",price:"161",img:"https://th.bing.com/th/id/R.e436f0b08ac2017a97a4794f5ef480eb?rik=nHWU52HVhpLjGQ&pid=ImgRaw&r=0"},
+            {id:7,name:"Kit Cat Soya Clump ทรายแมวเต้าหู้ กลิ่น พีช ธรรมชาติ 100%",price:"265",img:"https://www.tailybuddy.com/products/4663/%e0%b9%80%e0%b8%95%e0%b9%89%e0%b8%b2%e0%b8%ab%e0%b8%b9%e0%b9%89_%e0%b8%81%e0%b8%a5%e0%b8%b4%e0%b9%88%e0%b8%99_%e0%b8%9e%e0%b8%b5%e0%b8%8a1.jpg"},
+            {id:8,name:"PurLab เพอแล็บ ไม้ล่อแมว ตุ๊กตาไล่ฝน สำหรับแมว",price:"580",img:"https://res-5.cloudinary.com/central-pet-n-me/image/upload/c_lpad,dpr_2.0,f_auto,h_900,q_auto,w_900/v1/media/catalog/product/a/2/a210900059387-1.jpg?_i=AB"},
+            {id:9,name:"Kanimal แคนนิมอล Cat Tree คอนโดแมว 2 ชั้น",price:"2,490",img:"https://res-5.cloudinary.com/central-pet-n-me/image/upload/c_lpad,dpr_2.0,f_auto,h_900,q_auto,w_900/v1/media/catalog/product/2/2/2208070080001-1_1.jpg?_i=AB"},
+            {id:10,name:"Catidea แคทไอเดีย ห้องน้ำแมว รุ่น Cat Ears",price:"1,375",img:"https://res-2.cloudinary.com/central-pet-n-me/image/upload/c_lpad,dpr_2.0,f_auto,h_900,q_auto,w_900/v1/media/catalog/product/2/2/2212070150627-1.jpg?_i=AB"},
+
+        ]
+    let show = true;
+    let text = "<table border='1|1'>";
+    text += "<tr>";
+    text += "<td>"+"id"+"</td>";
+    text += "<td>"+"name"+"</td>";
+    text += "<td>"+"price"+"</td>";
+    text += "<td>"+"img"+"</td>";
+    text += "</tr>";
+    productList.forEach(v => createTable(v));
+    function createTable(value) {
+        text += "<tr>";
+        text += "<td>"+value.id+"</td>";
+        text += "<td>"+value.name+"</td>";
+        text += "<td>"+value.price+"</td>";
+        text += "<td>"+"<img width=300 height=300 src='"+value.img+"'/>"+"</td>";
+        text += "</tr>"; 
+    }
+    function showTable() {
+        if (show) {
+            document.getElementById("table").innerHTML = text;
+        } else {
+            document.getElementById("table").innerHTML = "";
+        }
+        show = !show;
+    }
+</script>
+<button type="button" onclick="showTable()">Click to show</button>
+<div id="table"></div>
+</body>
+</html>
